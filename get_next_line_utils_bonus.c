@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:32:51 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/27 13:36:56 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/27 13:46:58 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	char	*first_point;
 
-	len_s1 = 0;
-	len_s2 = 0;
-	while (s1 && s1[len_s1])
-		len_s1++;
-	while (s2 && s2[len_s2])
-		len_s2++;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
 	if (len_s1 + len_s2 <= 0)
 		return (NULL);
 	result = malloc((len_s1 + len_s2 + 1) * sizeof(char));

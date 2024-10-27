@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:32:47 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/27 13:40:15 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/27 13:43:58 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,31 +79,3 @@ char	*get_next_line(int fd)
 	}
 	return (NULL);
 }
-/*
-#include <fcntl.h>
-#include <stdio.h>
-int	main(void)
-{
-	int fd = open("text.txt", O_RDONLY);
-	char	*result;
-
-	result = get_next_line(fd);
-	printf("\\%s", result);
-	result = get_next_line(fd);
-	printf("\\%s", result);
-	result = get_next_line(fd);
-	printf("\\%s", result);
-	result = get_next_line(fd);
-	printf("\\%s", result);
-	result = get_next_line(fd);
-	printf("\\%s", result);
-	result = get_next_line(fd);
-	printf("\\%s", result);
-	//result = get_next_line(fd);
-	//printf("%s\n", result);
-	//result = get_next_line(fd);
-	//printf("%s\n", result);
-	//free(result);
-	//printf("%s", get_next_line(fd));
-	//printf("%s", get_next_line(fd));
-}*/
