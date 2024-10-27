@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:32:47 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/27 13:37:18 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/27 13:38:37 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static size_t	read_and_join(int fd, char **buffer)
 {
@@ -31,7 +31,7 @@ static size_t	read_and_join(int fd, char **buffer)
 	return (readed);
 }
 
-static char	*split_text(char **buffer, size_t index)
+static char	*split_text(char	**buffer, size_t index)
 {
 	char	*line;
 	char	*remainder;
@@ -56,25 +56,25 @@ char	*get_next_line(int fd)
 	size_t		index;
 	size_t		buffer_len;
 	size_t		readed;
-	static char	*buffer = NULL;
+	static char	*buffer[1024];
 
 	index = 0;
 	buffer_len = 0;
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);
-	if (buffer && buffer[0])
-		buffer_len = ft_strlen(buffer);
+	if (buffer[fd] && buffer[fd][0])
+		buffer_len = ft_strlen(buffer[fd]);
 	readed = buffer_len;
 	while (index <= buffer_len)
 	{
 		if (index == buffer_len)
-			readed = read_and_join(fd, &buffer);
-		if (!buffer)
+			readed = read_and_join(fd, &buffer[fd]);
+		if (!buffer[fd])
 			break;
 		if (index == buffer_len)
-			buffer_len = ft_strlen(buffer);
-		if (buffer[index] == '\n' || readed == 0)
-			return (split_text(&buffer, index));
+			buffer_len = ft_strlen(buffer[fd]);
+		if (buffer[fd][index] == '\n' || readed == 0)
+			return (split_text(&buffer[fd], index));
 		index++;
 	}
 	return (NULL);
