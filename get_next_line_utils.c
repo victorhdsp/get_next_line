@@ -6,11 +6,21 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:32:51 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/26 01:32:53 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/27 10:06:08 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+size_t	ft_strlen(const char *s)
+{
+	int	index;
+
+	index = 0;
+	while (s && s[index])
+		index++;
+	return (index);
+}
 
 void	*ft_memset(void *str, int c, size_t n)
 {
@@ -72,6 +82,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		if (s2 && *s2)
 			ft_memcpy(result, s2, len_s2);
 	}
-	result[len_s1 + len_s2 + 1] = '\0';
 	return (first_point);
 }
