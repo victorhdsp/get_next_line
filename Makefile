@@ -1,5 +1,5 @@
 NAME=gnl.out
-FILES=get_next_line.o get_next_line_utils.o main.o
+FILES=get_next_line.o get_next_line_utils.o
 CC=cc -Wall -Wextra  -I . -g -D BUFFER_SIZE=42
 
 all: $(NAME)
