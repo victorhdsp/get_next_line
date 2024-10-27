@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:32:47 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/27 13:37:18 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/27 13:40:18 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*get_next_line(int fd)
 		if (index == buffer_len)
 			readed = read_and_join(fd, &buffer);
 		if (!buffer)
-			break;
+			break ;
 		if (index == buffer_len)
 			buffer_len = ft_strlen(buffer);
 		if (buffer[index] == '\n' || readed == 0)
