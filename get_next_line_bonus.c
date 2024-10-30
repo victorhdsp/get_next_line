@@ -31,7 +31,7 @@ static size_t	read_and_join(int fd, char **buffer)
 	return (readed);
 }
 
-static char	*split_text(char	**buffer, size_t index)
+static char	*split_text(char **buffer, size_t index)
 {
 	char	*line;
 	char	*remainder;
